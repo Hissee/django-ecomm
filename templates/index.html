@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% include "header.html" %}
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
@@ -9,8 +11,14 @@
     <link rel= 'stylesheet' href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Home Page</h1>
+    {% comment %} <h1>Home Page</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis doloremque debitis atque sunt optio ipsa dolorem unde, eum dicta. Modi quis minus explicabo, iste fugiat consequatur voluptatum alias possimus perferendis facere ut unde beatae voluptate praesentium facilis nam ab dolor aperiam neque doloremque dicta saepe porro? Inventore quas at fuga.</p>
-    <img src = "{% static '/image/mango.png' %}">
+    <img src = "/{{image/mango.png}}"> {% endcomment %}
+
+    {% for product in products %}
+        {% comment %} <img src ='' alt = "{{product.name}}"> {% endcomment %}
+        <h1>{{product.name}}</h1>
+        <p>Selling Price: <span style = 'font-weight: bold; color:black'>{{product.selling_price}}</span></p>
+    {% endfor %}
 </body>
 </html>
