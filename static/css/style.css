@@ -1,7 +1,9 @@
-body{
-    background: palegreen;
+.asteriskField{
+    color : red;
 }
-
-h1{
-    color: brown;
+.form-group{
+    margin-bottom: 5px;
+}
+.textarea{
+    resize: none;
 }
