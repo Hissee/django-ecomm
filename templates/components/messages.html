@@ -1,0 +1,24 @@
+{% if messages %}
+<script>
+    document.addEventListener("DOMContentLoaded",function(){
+        {% for message in messages %}
+            Swal.fire({
+                position: 'top',
+                title: "{{message}}",
+                icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% elif message.tags == 'warning' %}warning{% elif message.tags == 'info' %}info{% endif %}",
+                draggable: true,
+                timer: 2000
+            });
+        {% endfor %}
+    })
+</script>
+
+{% comment %} <div class="messages">
+    {% for message in messages %}
+    <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </p>
+    {% endfor %}
+</div> {% endcomment %}
+{% endif %}

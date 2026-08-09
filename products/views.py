@@ -26,6 +26,7 @@ def addproduct(request):
         productForm = ProductForm(request.POST,request.FILES)
         if productForm.is_valid :
             productForm.save()
+            messages.success(request, 'Product added successfully')
             return redirect('all-products')
     context = {
         'productForm': ProductForm
@@ -35,6 +36,7 @@ def addproduct(request):
 def deleteProduct(request, product_id):
     product = Product.objects.get(id = product_id)
     product.delete()
+    messages.success(request, 'Product deleted successfully')
     return redirect('all-products')
 
 def updateProduct(request, product_id):
@@ -43,6 +45,7 @@ def updateProduct(request, product_id):
         productForm = ProductForm(request.POST,request.FILES, instance=product)
         if productForm.is_valid() :
             productForm.save()
+            messages.success(request, 'Product updated successfully')
             return redirect('all-products')
     context = {
         # instace is to fill product detail in product form
