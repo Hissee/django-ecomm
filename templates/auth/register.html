@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+
+    - Create a user
+
+{% endblock title %}
+
+{% block main-content %}
+
+    <div class="container my-5">
+        <div class="col-md-6 shadow p-3 m-auto">
+        <form method = 'POST'>
+        <h2 class='text-center text-secondary'>Register</h2>
+            {% csrf_token %}
+            {{form | crispy}}
+            <input type="submit" value='Register' class='btn btn-info w-100 my-30'>
+        </form>
+        </div>
+    </div>
+
+{% endblock main-content %}
+
