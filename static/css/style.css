@@ -1,3 +1,16 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --text-color: #444;
+    --primary-color: #023b6d;
+    --secondary-text-color:  #0d6efd;
+}
+a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
 .asteriskField{
     color : red;
 }
@@ -6,4 +19,7 @@
 }
 .textarea{
     resize: none;
+}
+.head{
+    background: red !important;
 }
