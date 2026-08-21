@@ -25,11 +25,7 @@
     {% include "components/header.html" %}
     {% include "components/messages.html" %}
 
-    {% if user.is_authenticated %}
-    <p>{{user.username}}</p>
     
-    {% endif %}
-
     {% block main-content %}
     
     {% endblock main-content %}

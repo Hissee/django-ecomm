@@ -4,12 +4,14 @@
 }
 :root{
     --text-color: #444;
-    --primary-color: #023b6d;
-    --secondary-text-color:  #0d6efd;
+    --primary-color: #92e790;
+    --secondary-text-color:  #40608f;
 }
-a{
+.nav-bar a{
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--text-color);
+    margin: 5px;
+    padding: 5px;
 }
 .asteriskField{
     color : red;
@@ -20,14 +22,53 @@ a{
 .textarea{
     resize: none;
 }
+/* header css */
 header .hid{
     background-color: var(--primary-color) !important;
 }
+.logo h1{
+    color: aliceblue;
+}
+.nav-bar, .menu{
+    justify-content: space-between;
+}
+.menu{
+    align-self: center;
+}
+.auth-btn a{
+    color: aliceblue;
+}
+.hid{
+    background-color: var(--primary-color);
+    padding: 10px 50px 0px 50px ;
+}
+/* end header css */
+
 
 /* footer styles */
 footer.fid{
     background-color: var(--primary-color);
+    padding: 10px;
+    a{
+        color: var(--text-color);
+        text-decoration: none;
+    }
 }
+
+.footer-logo-div a img{
+    height: 150px;
+    width: 150px;
+}
+
+.social-links{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    a{
+        font-size: 30px;
+    }
+}
+
 
 /* footerend footer style */
 

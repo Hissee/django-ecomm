@@ -1,47 +1,39 @@
-<header class = ''>
-  <div class="container-xl hid d-flex justify-content-between my-15">
-    <a href="#"
-      ><img
-        src="/{{data.favicon}} "
-        alt="bootstrap"
-        width="186"
-        height="26"
-    /></a>
-    <div class="mobile-actions">
-      <button type="button" class="icon-btn" aria-label="Search">
-        <i class="bi bi-search"></i>
-      </button>
-      <button type="button" class="icon-btn" aria-label="Open menu">
-        <i class="bi bi-list"></i>
-      </button>
-    </div>
-    <nav class="nav-bar">
-      <ul type="none">
-        <li>
-          <a href="" class="d-flex gap-1">
-            <span>Template</span>
-            <i class="bi bi-chevron-down"></i>
-          </a>
-        </li>
-        <li>
-          <a href=""> Bootstrap Builder </a>
-        </li>
-        <li><a href="">Premium</a></li>
-        <li><a href="">DevTools</a></li>
-        <li><a href="">License</a></li>
-        <li><a href="">Contact</a></li>
-        <li>
-          <a href="" class="d-flex gap-1">
-            <i class="bi bi-person member-icon"></i>
-            <span>Members</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <div class="d-flex border border-black p-2 rounded-pill search-div">
-      <input type="text" placeholder="Search" class="no-border" />
-      <i class="bi bi-search no-border"></i>
-    </div>
+<header class = 'hid'>
+  <div class = 'col-md-4 m-auto'>
+    <form class="form-inline my-2 my-lg-0 d-flex w-">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
+  <div class = 'nav-bar d-flex flex-wrap justify-space-between'>
+    <div class = 'logo'>
+      <h2>Hissee's Store</h2>
+      {% comment %} <img src='/{{data.favicon}}' alt="" height = "100px"> {% endcomment %}
+    </div>
+    <div class = 'menu '>
+      <a href="/">Home</a>
+      <a href="{% url 'all-products' %}">Products</a>
+      <a href="">Cart</a>
+      <a href="">About</a>
+      <a href="">Contact</a>
+    </div>
+    <div class = 'auth-btn  '>
+      {% if user.is_authenticated %}
+      <div class="dropdown show">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user.username}}
+        </a>
 
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="{% url 'login'  %}">Log out</a>
+          <a class="dropdown-item" href="#">Switch Account</a>
+          <a class="dropdown-item" href="#">Cart</a>
+        </div>
+      </div>
+      {% else %}    
+      <a class = 'btn btn-primary'>Login</a>
+      <a class = 'btn btn-secondary'>Register</a>
+    </div>
+    {% endif %}
+  </div>
 </header>
