@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main-content %}
+
+
+<div class="container caresol my-5">
+    <h2>Products</h2>
+    <hr>
+    <div class='d-flex flex-wrap products'>
+    {% for product in products %}
+      <div class="card" id='products' style="width: 18rem;">
+          <img src="/{{product.image}}" class="card-img-top" alt="{{product.item}}">
+        <div class="card-body">
+          <h5 title="{{product.name}}" class="card-title">{{product.name}}</h5>
+            <p class="card-text">
+                <span class= 'fw-bold'>Price: </span>
+                <del style = "color:red">Rs {{product.original_price}}</del>  
+                <span> Rs {{product.selling_price}}</span>
+            </p>
+          <p class="card-text">Stock : {{product.stock}} </p>
+          <small title="{{product.description}}" class="fs-6">{{product.description|slice:':50'}}..</small><br><br>
+          <a href="#" class="btn btn-primary">BUY</a>
+          <a href="#" class="btn btn-primary">Add to Cart</a>
+        </div>
+      </div>
+{% endfor %}
+  </div>
+</div
+{% endblock main-content %}

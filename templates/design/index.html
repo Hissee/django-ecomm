@@ -7,7 +7,7 @@
 <h2>Trending items</h2>
 <hr>
   <div class='d-flex owl-carousel products'>
-    {% for product in products %}
+    {% for product in trendingProducts %}
       <div class="card" id='products' style="width: 18rem;">
           <img src="/{{product.image}}" class="card-img-top" alt="{{product.item}}">
         <div class="card-body">
